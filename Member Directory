@@ -1,1 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Member Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-page: #e6f0f5;
+      --bg-header: #1f3b4d;
+      --card-bg: #ffffff;
+      --card-top: #d4e4f4;
+      --text-main: #1f2933;
+      --text-muted: #6b7b8c;
+      --accent-pill: #3bc488;
+      --accent-pill-text: #ffffff;
+      --border-soft: #e1e7ec;
+      --link: #1b8ad8;
+      --shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.1);
+      --radius-card: 16px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top header bar */
+    .top-header {
+      background: var(--bg-header);
+      color: #ffffff;
+      padding: 32px 16px 80px;
+      text-align: center;
+    }
+
+    .top-header h1 {
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      opacity: 0.9;
+    }
+
+    .top-header p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* Search bar */
+    .search-wrapper {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box {
+      background: #ffffff;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 10px 18px;
+      box-shadow: var(--shadow-soft);
+      width: min(640px, 92vw);
+    }
+
+    .search-icon {
+      font-size: 1rem;
+      margin-right: 10px;
+      color: var(--text-muted);
+    }
+
+    .search-input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: transparent;
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    /* Main content */
+    main {
+      margin-top: -48px; /* pull cards up into blue header curve */
+      padding: 0 16px 40px;
+    }
+
+    .section {
+      max-width: 1160px;
+      margin: 0 auto 36px;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .member-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+      transform: translateY(0) scale(1);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+    }
+
+    .card-top-strip {
+      height: 60px;
+      background: linear-gradient(135deg, #c5ddf7, #e3f5ff);
+    }
+
+    .member-body {
+      padding: 16px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .member-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .member-role {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      align-self: flex-start;
+      background: var(--accent-pill);
+      color: var(--accent-pill-text);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: capitalize;
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      border-top: 1px solid var(--border-soft);
+      margin: 6px 0 10px;
+    }
+
+    .card-footer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-line span.icon {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .card-line a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-line a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .top-header {
+        padding-bottom: 72px;
+      }
+      main {
+        margin-top: -40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top-header">
+      <h1>Member Directory</h1>
+      <p>Connect with our team members</p>
+
+      <div class="search-wrapper">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="text"
+            placeholder="Search by name, role, or department..."
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Our Leadership -->
+      <section class="section">
+        <h2 class="section-title">Our Leadership</h2>
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">President</p>
+                <span class="pill">Executive</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Vice President</p>
+                <span class="pill">Executive</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Director of Operations</p>
+                <span class="pill">Executive</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Director of Outreach</p>
+                <span class="pill">Executive</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Our Team -->
+      <section class="section">
+        <h2 class="section-title">Our Team</h2>
+        <div class="cards-grid">
+          <!-- Card 5 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Events Coordinator</p>
+                <span class="pill">Logistics</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Technical Lead</p>
+                <span class="pill">Engineering</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Marketing Coordinator</p>
+                <span class="pill">Marketing</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="member-card" data-member>
+            <div class="card-top-strip"></div>
+            <div class="member-body">
+              <div>
+                <h3 class="member-name">First Last</h3>
+                <p class="member-role">Finance Officer</p>
+                <span class="pill">Finance</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="card-footer">
+                <div class="card-line">
+                  <span class="icon">✉️</span>
+                  <span>name@club.org</span>
+                </div>
+                <div class="card-line">
+                  <span class="icon">👤</span>
+                  <a href="#">View Profile</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Simple search logic -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll("[data-member]");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (!query || text.includes(query)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
