@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Projects Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div>
+                        <h1>Team Projects Hub</h1>
+                        <p class="subtitle">Central space for all team projects and resources</p>
+                    </div>
+                    <button class="btn-primary" id="newProjectBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        New Project
+                    </button>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="view-toggle">
+                    <button class="toggle-btn active" id="projectsViewBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 6h4m-4 6h4m-4 6h4M8 6h13M8 12h13M8 18h13"></path>
+                        </svg>
+                        Projects
+                    </button>
+                    <button class="toggle-btn" id="teamViewBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Team Directory
+                    </button>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="search-filters" id="projectFilters">
+                    <div class="search-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search projects, tech stack...">
+                    </div>
+
+                    <div class="sort-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m21 16-4 4-4-4M17 20V4M3 8l4-4 4 4M7 4v16"></path>
+                        </svg>
+                        <select id="sortSelect">
+                            <option value="name">Sort by Name</option>
+                            <option value="status">Sort by Status</option>
+                            <option value="teamSize">Sort by Team Size</option>
+                        </select>
+                    </div>
+
+                    <div class="status-filters" id="statusFilters">
+                        <button class="filter-btn active" data-status="All">All</button>
+                        <button class="filter-btn" data-status="Planning">Planning</button>
+                        <button class="filter-btn" data-status="In Progress">In Progress</button>
+                        <button class="filter-btn" data-status="Review">Review</button>
+                        <button class="filter-btn" data-status="Completed">Completed</button>
+                        <button class="filter-btn" data-status="On Hold">On Hold</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Projects Grid -->
+                <div id="projectsView" class="projects-grid"></div>
+
+                <!-- Team Directory -->
+                <div id="teamView" class="team-directory" style="display: none;"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <div>
+                    <h2 id="modalProjectName"></h2>
+                    <span id="modalProjectStatus" class="status-badge"></span>
+                </div>
+                <button class="close-btn" id="closeProjectModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="projectModalBody"></div>
+        </div>
+    </div>
+
+    <!-- New Project Modal -->
+    <div id="newProjectModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Create New Project</h2>
+                <button class="close-btn" id="closeNewProjectModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="newProjectForm">
+                    <div class="form-group">
+                        <label>Project Name *</label>
+                        <input type="text" id="projectName" required placeholder="E.g., E-Commerce Platform">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description *</label>
+                        <textarea id="projectDescription" required rows="3" placeholder="Brief description of the project..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status *</label>
+                        <select id="projectStatus" required>
+                            <option value="Planning">Planning</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Review">Review</option>
+                            <option value="Completed">Completed</option>
+                            <option value="On Hold">On Hold</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label>Tech Stack</label>
+                            <button type="button" class="btn-link" id="addTechBtn">+ Add Technology</button>
+                        </div>
+                        <div id="techStackContainer">
+                            <input type="text" class="tech-input" placeholder="E.g., React, Node.js, PostgreSQL">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>GitHub Link</label>
+                            <input type="url" id="githubLink" placeholder="https://github.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Design Link</label>
+                            <input type="url" id="designLink" placeholder="https://figma.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Task Board Link</label>
+                            <input type="url" id="taskBoardLink" placeholder="https://notion.so/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label>Team Members</label>
+                            <button type="button" class="btn-link" id="addMemberBtn">+ Add Member</button>
+                        </div>
+                        <div id="teamMembersContainer">
+                            <div class="team-member-row">
+                                <input type="text" placeholder="Name" class="member-name">
+                                <input type="text" placeholder="Role" class="member-role">
+                                <input type="email" placeholder="Email" class="member-email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label>Project Roadmap</label>
+                            <button type="button" class="btn-link" id="addRoadmapBtn">+ Add Milestone</button>
+                        </div>
+                        <div id="roadmapContainer">
+                            <input type="text" class="roadmap-input" placeholder="E.g., Q1 2025: MVP Launch">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelNewProject">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
