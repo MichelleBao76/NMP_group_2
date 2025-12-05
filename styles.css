@@ -20,6 +20,35 @@
     --shadow-hover: 0 4px 18px rgba(0,0,0,0.08);
 }
 
+.sour-gummy {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.nav a {
+    margin:16px auto;
+    font-size: 1.5em;
+    display: block;
+    color: rgb(58, 93, 140);
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.nav a:hover {
+    background-color: #a6d8ef;
+}
+
 * {
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
@@ -543,4 +572,140 @@ body.modal-open {
 .modal-content::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: transparent;     
+    color: white
+}
+
+header {
+    background-color: rgb(216,242,239); 
+    padding: 15px 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    color: rgb(12,157,142);
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* LEFT SIDE */
+.calendar-section {
+    flex: 2;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.calendar-section h2 {
+    margin-top: 0;
+    color: rgb(12,157,142);
+}
+
+/* RIGHT SIDE */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-box {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar-box h3 {
+    margin-top: 0;
+    color: rgb(12,157,142);
+}
+
+/* Event Cards */
+.event-item {
+    background: rgb(12,157,142);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.event-item.alert {
+    border-left: 4px solid whitesmoke;
+}
+
+.event-item.normal {
+    border-left: 4px solid rgb(12,157,142);
+}
+
+.event-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+.notifications {
+    color: black;
+}
+/* Responsiveness */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+}
+/* Background bubbles */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;         /* IMPORTANT: keeps bubbles behind everything */
+}
+
+.bubbles span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgb(12, 157, 142);  /* green translucent bubble */
+    border-radius: 50%;
+    bottom: -100px;
+    animation: rise 10s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+/* Random bubble sizes + delays */
+.bubbles span:nth-child(1) { left: 10%; width: 15px; height: 15px; animation-duration: 8s; }
+.bubbles span:nth-child(2) { left: 20%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: 1s; }
+.bubbles span:nth-child(3) { left: 35%; width: 18px; height: 18px; animation-duration: 9s; animation-delay: 2s; }
+.bubbles span:nth-child(4) { left: 50%; width: 30px; height: 30px; animation-duration: 11s; animation-delay: 0.5s; }
+.bubbles span:nth-child(5) { left: 65%; width: 22px; height: 22px; animation-duration: 10s; animation-delay: 3s; }
+.bubbles span:nth-child(6) { left: 75%; width: 28px; height: 28px; animation-duration: 14s; animation-delay: 1.5s; }
+.bubbles span:nth-child(7) { left: 85%; width: 20px; height: 20px; animation-duration: 9s; animation-delay: 2.5s; }
+.bubbles span:nth-child(8) { left: 30%; width: 35px; height: 35px; animation-duration: 13s; animation-delay: 4s; }
+.bubbles span:nth-child(9) { left: 55%; width: 18px; height: 18px; animation-duration: 8s; animation-delay: 3.5s; }
+.bubbles span:nth-child(10){ left: 90%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: 2s; }
+
+/* Animation: bubbles float up and gently move sideways */
+@keyframes rise {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-500px) translateX(20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-900px) translateX(-20px);
+        opacity: 0;
+    }
 }

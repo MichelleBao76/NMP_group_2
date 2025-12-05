@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Team Directory</title>
+  <title>CFG Directory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@200..800&display=swap" rel="stylesheet">
   <style>
     /* ============================= */
     /* Global Styles & Resets        */
     /* ============================= */
 
     :root {
-      --bg-main: #FCFCFC;
-      --bg-card: #E1EFF7;
+      --bg-main: #B8D9E1;
+      --bg-card: #DDF1EF;
       --bg-badge-planning: #7FCACD;
-      --bg-badge-inprogress: #0AD2D5;
+      --bg-badge-inprogress: #51a9ae;
       --bg-badge-review: #B8D9E1;
       --bg-badge-completed: #108668;
       --bg-badge-onhold: #B8D9E1;
@@ -26,6 +29,27 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.05);
       --shadow-hover: 0 4px 18px rgba(0,0,0,0.08);
     }
+
+    .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    }
+    .nav a {
+        margin:16px auto;
+        font-size: 1.5em;
+        display: block;
+        color: rgb(58, 93, 140);
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+      
+    .nav a:hover {
+        background-color: #a6d8ef;
+    }
+
 
     * {
       box-sizing: border-box;
@@ -51,7 +75,7 @@
 
     .header {
       border-bottom: 1px solid var(--border-color);
-      background: #ffffff;
+      background: #B8D9E1;
     }
 
     .header-top {
@@ -130,7 +154,7 @@
     /* ============================= */
 
     .section-title {
-      font-size: 0.95rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: var(--text-secondary);
       margin-bottom: 0.75rem;
@@ -239,13 +263,17 @@
   </style>
 </head>
 <body>
-
+  <ul class = "nav">
+    <li class="sour-gummy"><a href="Member Directory.html">CFG Members!</a></li>
+    <li class="sour-gummy"><a href="Calendar.html">Calendar!</a></li>
+    <li class="sour-gummy"><a href="resources.html">Resources!</a></li>
+  </ul>
   <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="header-top">
         <div class="title-block">
-          <h1>Team Directory</h1>
+          <h1>CFG Directory</h1>
           <p class="subtitle">Browse members across all projects and roles</p>
         </div>
       </div>
@@ -258,7 +286,7 @@
           </svg>
           <input id="searchInput" type="text" placeholder="Search by name, role, team, or email...">
         </div>
-        <span class="badge-pill">Try searching roles like “engineering”</span>
+        <span class="badge-pill">Try searching roles like "President"</span>
       </div>
     </div>
   </header>
@@ -273,22 +301,63 @@
         <!-- Card Template -->
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
+            <h3 class="member-name">Nirali Shah</h3>
             <p class="member-role">President</p>
             <span class="pill">Executive</span>
           </div>
           <div class="divider"></div>
+          <div>
+            <p><q>Hi, I'm Nirali! I really like coffee, watching Netflix, and trying new foods!</q></p>
+          </div>
           <div class="card-footer">
-            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
-            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+            <div class="card-line"><span class="icon">✉️</span> Email: <a href="mailto:nirali.shah@berkeley.edu">nirali.shah@berkeley.edu</nirali.shah></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/niralishah05/" target="_blank">View Profile</a></div>
           </div>
         </article>
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Vice President</p>
+            <h3 class="member-name">Yusrah Khan</h3>
+            <p class="member-role">Internal Vice President</p>
             <span class="pill">Executive</span>
+          </div>
+          <div class="divider"></div>
+          <div>
+            <p><q>hii im Yusrah, i love binging tv shows, exploring cute shops and hanging out with friends!</q></p>
+          </div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> Email: <a href="mailto:yusrahk@berkeley.edu">yusrahk@berkeley.edu</yusrah.khan></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/yusrah-khan/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Shayla He</h3>
+            <p class="member-role">External Vice President</p>
+            <span class="pill">Executive</span>
+          </div>
+          <div class="divider"></div>
+          <div>
+            <p><q>Hi, I'm Shayla! I love to sing, dance, play badminton, and get food/boba/dessert with friends :)</q></p>
+          </div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> Email: <a href="mailto:shaylahe@berkeley.edu">shaylahe@berkeley.edu</shayla.he></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/shayla-he-70348b2b7/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Core Team -->
+      <h2 class="section-title">Our Team</h2>
+      <div class="cards-grid">
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Anira Kutty</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Alameda County Public Health</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
@@ -299,9 +368,9 @@
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Director of Operations</p>
-            <span class="pill">Executive</span>
+            <h3 class="member-name">Priya Venkatesan</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Alameda County Public Health</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
@@ -312,9 +381,100 @@
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Director of Outreach</p>
-            <span class="pill">Executive</span>
+            <h3 class="member-name">Shruti Vora</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Wadhwani AI</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Sejal Bilwar</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Wadhwani AI</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Sara Jangid</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">San Jose Museum of Art</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Krithika Singh</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">San Jose Museum of Art</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Sarah Zhang</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Startnoo</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Clinton Nguyen</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Startnoo</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Shreya Vora</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Robotics</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Stephan Park</h3>
+            <p class="member-role">PM</p>
+            <span class="pill">Robotics</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
@@ -325,59 +485,163 @@
 
       </div>
 
-      <!-- Core Team -->
-      <h2 class="section-title">Core Team</h2>
+      <!-- Alumni -->
+      <h2 class="section-title">Alumni</h2>
       <div class="cards-grid">
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Events Coordinator</p>
-            <span class="pill">Logistics</span>
+            <h3 class="member-name">Alex Pease</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">Data Science + Chemistry</span>
           </div>
           <div class="divider"></div>
-          <div class="card-footer">
-            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
-            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+          <div class="card-footer"> 
+            <div class="card-line"><span class="icon">✉️</span>Email: <a href="mailto:alexpease04@gmail.com">alexpease04@gmail.com</alex.pease></a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/alexpease04/" target="_blank">View Profile</a></div>
           </div>
         </article>
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Technical Lead</p>
-            <span class="pill">Engineering</span>
+            <h3 class="member-name">Thomas Culhane</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">SWE @ UBS</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
-            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
-            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+            <div class="card-line"><span class="icon">✉️</span> <a href="mailto:culhanethomas6@gmail.com">culhanethomas6@gmail.com</culhanethomas6></a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/tculhane" target="_blank">View Profile</a></div>
           </div>
         </article>
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Marketing Coordinator</p>
-            <span class="pill">Marketing</span>
+            <h3 class="member-name">Boris Tomov</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">UC Berkeley</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
             <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
-            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/boris-tomov-b45a53238/" target="_blank">View Profile</a></div>
           </div>
         </article>
 
         <article class="member-card" data-member>
           <div class="member-header">
-            <h3 class="member-name">First Last</h3>
-            <p class="member-role">Finance Officer</p>
-            <span class="pill">Finance</span>
+            <h3 class="member-name">Dhruv Chowdhary</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">Meta</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> <a href="mailto:dhruvchowdhary7@gmail.com">dhruvchowdhary7@gmail.com</dhruvchowdhary7></a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/dhruv-chowdhary/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Shivan Patel</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">Ramp</span>
           </div>
           <div class="divider"></div>
           <div class="card-footer">
             <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
-            <div class="card-line"><span class="icon">📁</span> <a href="#">View Profile</a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/shivan-patel/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Kristy Chu</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">Pure Storage</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> <a href="mailto:kriisty0914@gmail.com">kriisty0914@gmail.com</kriisty></a></div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/kristy-chu-769a8b1b3/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Esha Puri</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">SWE @ Cisco</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="hhttps://www.linkedin.com/in/esha-puri/" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Joanne Tran</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">EECS + CS</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/tranjoanne" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Juyeon Ma</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">SWE @ UBS</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/juyeon-ma-5652821b7" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Pranitha Rao</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">Research Engineer JHU</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/pranitharao" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Nazar Ospanov</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">CS</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/nazar-ospanov" target="_blank">View Profile</a></div>
+          </div>
+        </article>
+
+        <article class="member-card" data-member>
+          <div class="member-header">
+            <h3 class="member-name">Yixin Huang</h3>
+            <p class="member-role">Alumni</p>
+            <span class="pill">SWE @ UBS</span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer">
+            <div class="card-line"><span class="icon">✉️</span> firstlast@gmail.com</div>
+            <div class="card-line"><span class="icon">📁</span> <a href="https://www.linkedin.com/in/yixin-huang-91b7781aa/" target="_blank">View Profile</a></div>
           </div>
         </article>
 

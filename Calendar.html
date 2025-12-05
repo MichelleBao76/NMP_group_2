@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code for Good - Event Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <ul class = "nav">
+        <li class="sour-gummy"><a href="Member Directory.html">CFG Members!</a></li>
+        <li class="sour-gummy"><a href="Calendar.html">Calendar!</a></li>
+        <li class="sour-gummy"><a href="resources.html">Resources!</a></li>
+    </ul>
+    <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+    <header>
+        <h1>Code for Good – Event Calendar</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- LEFT SIDE: GOOGLE CALENDAR -->
+        <div class="calendar-section">
+            <h2>Event Calendar</h2>
+
+            <iframe 
+                src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_LINK_HERE&ctz=America%2FNew_York"
+                style="border: 0"
+                width="100%"
+                height="600"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+
+        <!-- RIGHT SIDE: IMPORTANT EVENTS + NOTIFICATIONS -->
+        <div class="sidebar">
+
+            <div class="sidebar-box events">
+                <h3>Important Events</h3>
+
+                <div class="event-item alert">
+                    <h4>Project Kickoff Meeting</h4>
+                    <p>📅 Dec 5, 2025 — 2:00 PM</p>
+                    <p>Mandatory team meeting for all members</p>
+                </div>
+
+                <div class="event-item normal">
+                    <h4>Code Review Session</h4>
+                    <p>📅 Dec 6, 2025 — 10:00 AM</p>
+                    <p>Review PRs and discuss best practices</p>
+                </div>
+
+                <div class="event-item alert">
+                    <h4>Feature Implementation Deadline</h4>
+                    <p>📅 Dec 8, 2025 — 11:59 PM</p>
+                    <p>Complete all assigned tasks</p>
+                </div>
+
+                <div class="event-item normal">
+                    <h4>Community Outreach Event</h4>
+                    <p>📅 Dec 10, 2025 — 3:00 PM</p>
+                    <p>Volunteer opportunity at local shelter</p>
+                </div>
+
+                <div class="event-item alert">
+                    <h4>Final Presentation</h4>
+                    <p>📅 Dec 15, 2025 — 1:00 PM</p>
+                    <p>Present your project to judges</p>
+                </div>
+            </div>
+
+            <div class="sidebar-box notifications">
+                <h3>Notifications</h3>
+                <p>🔔 New comment on your project proposal</p>
+                <p>🔔 Your pull request has been approved</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
