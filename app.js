@@ -2,128 +2,109 @@
 let projects = [
     {
         id: '1',
-        name: 'E-Commerce Platform',
-        description: 'A modern e-commerce platform with real-time inventory management, payment processing, and customer analytics dashboard.',
-        techStack: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
-        githubLink: 'https://github.com/team/ecommerce-platform',
-        designLink: 'https://figma.com/design/ecommerce',
-        taskBoardLink: 'https://notion.so/ecommerce-board',
+        name: 'Alameda County Public Health Department',
+        description: 'Streamlined and accessible way to visualize accreditation process across domains, measures, and standards, including submission status and completing progress, using existing spreadsheet and Microsoft Suite visualization tools.',
+        techStack: ['Microsoft Sharepoint', 'Power BI', 'Microsoft SmartSheets', 'SQL'],
+        githubLink: 'https://github.com/team/alameda',
+        designLink: 'https://figma.com/design/alameda',
+        taskBoardLink: 'https://notion.so/alameda',
         teamMembers: [
-            { name: 'Sarah Chen', role: 'Lead Developer', contact: 'sarah.chen@company.com' },
-            { name: 'Mike Johnson', role: 'Backend Engineer', contact: 'mike.j@company.com' },
-            { name: 'Emma Davis', role: 'UI/UX Designer', contact: 'emma.d@company.com' },
+            { name: 'Anirra Kutty', role: 'Project Manager', contact: 'anirra_kutty@berkeley.edu' },
+            { name: 'Priya Darshini Venkatesan', role: 'Project Manager', contact: 'priyavenkatesan@berkeley.edu' },
+            { name: 'Srikala Munukutla', role: 'Software Developer', contact: 'srikala.v.munukutla@berkeley.edu' },
+            { name: 'Rajan Prem Tavathia', role: 'Software Developer', contact: 'rtavathia@berkeley.edu' },
+            { name: 'Mikayla Gu Acosta', role: 'Software Developer', contact: 'macosta28@berkeley.edu' },
+            { name: 'Ariana Ghimire', role: 'Software Developer', contact: 'arianaghimire27@berkeley.edu' },
+            { name: 'Ethan Jang', role: 'Software Developer', contact: 'eef.jang@berkeley.edu' },
         ],
         roadmap: [
-            'Q1 2025: MVP Launch',
-            'Q2 2025: Payment Integration',
-            'Q3 2025: Mobile App',
-            'Q4 2025: International Expansion'
+            'August 2025: Project Kickoff',
+            'September 2025: Requirements Gathering',
+            'October 2025: Design Phase',
+            'November 2025: Development Phase'
         ],
-        status: 'In Progress'
+        status: 'Completed'
     },
     {
         id: '2',
-        name: 'Analytics Dashboard',
-        description: 'Real-time analytics and reporting dashboard for business intelligence with customizable widgets and data visualization.',
-        techStack: ['TypeScript', 'Next.js', 'GraphQL', 'MongoDB', 'D3.js'],
+        name: 'Wadhwani AI',
+        description: 'AI-enabled Early Grade Reading Assessment (EGRA) system that digitizes reading fluency checks, automates scoring, and delivers targeted remediation at classroom scale through a teacher-friendly mobile app.',
+        techStack: ['Python', 'LLMs', 'Speech Recognition Models', 'NLP', 'API'],
         githubLink: 'https://github.com/team/analytics-dashboard',
         designLink: 'https://figma.com/design/analytics',
         taskBoardLink: 'https://jira.com/analytics-project',
         teamMembers: [
-            { name: 'Alex Kim', role: 'Full Stack Developer', contact: 'alex.kim@company.com' },
-            { name: 'Lisa Wang', role: 'Data Engineer', contact: 'lisa.wang@company.com' },
+            { name: 'Shruti Sujal Vora', role: 'Project Manager', contact: 'shruti.s.vora@berkeley.edu' },
+            { name: 'Sejal Bilwar', role: 'Project Manager', contact: 'sejalbilwar@berkeley.edu' },
+            { name: 'Aniket Gupta', role: 'Full Stack Developer', contact: 'aniket.gupta@berkeley.edu' },
+            { name: 'Ashwin Ravuru Kalyan', role: 'Underwater Basket Weaver', contact: 'ashwinkalyan@berkeley.edu' },
+            { name: 'Edwin Lee', role: 'Full Stack Developer', contact: 'jlee121@berkeley.edu' },
+            { name: 'Felicia Heng', role: 'Data Engineer', contact: 'feliciahxy@berkeley.edu' },
+            { name: 'Madeline Louise Agusalim', role: 'Data Engineer', contact: 'maddy11@berkeley.edu' },
+            { name: 'Peyton A Li', role: 'Data Engineer', contact: 'peli@berkeley.edu' },
+            { name: 'Shayla He', role: 'Data Engineer', contact: 'shaylahe@berkeley.edu' },
+
         ],
         roadmap: [
-            'Phase 1: Core Dashboard - Completed',
-            'Phase 2: Custom Reports - In Progress',
-            'Phase 3: API Integration - Planned',
-            'Phase 4: ML Insights - Future'
-        ],
-        status: 'In Progress'
-    },
-    {
-        id: '3',
-        name: 'Mobile Fitness App',
-        description: 'Cross-platform fitness tracking application with workout plans, nutrition tracking, and social features.',
-        techStack: ['React Native', 'Firebase', 'Redux', 'TensorFlow Lite'],
-        githubLink: 'https://github.com/team/fitness-app',
-        designLink: 'https://figma.com/design/fitness-app',
-        taskBoardLink: 'https://trello.com/b/fitness',
-        teamMembers: [
-            { name: 'James Park', role: 'Mobile Lead', contact: 'james.p@company.com' },
-            { name: 'Nina Patel', role: 'iOS Developer', contact: 'nina.p@company.com' },
-            { name: 'Carlos Rodriguez', role: 'Android Developer', contact: 'carlos.r@company.com' },
-            { name: 'Sophie Martin', role: 'Product Designer', contact: 'sophie.m@company.com' },
-        ],
-        roadmap: [
-            'Beta Testing - Current',
-            'App Store Submission - Next',
-            'Launch Marketing Campaign',
-            'Feature Updates v2.0'
+            'August 2025: Project Kickoff',
+            'September 2025: Data Collection & Model Training',
+            'October 2025: Pilot Testing & Feedback',
+            'November 2025: Prayer & Test Launch'
         ],
         status: 'Review'
     },
     {
+        id: '3',
+        name: 'Tukuypaj',
+        description: 'Pair of 3D printed robotic arms trained with ACT policies (RL) to teach the arms how to execute feeding motions from a diverse set of environments.',
+        techStack: ['3D Modeling', 'ML Models', 'LeRobot Teleoperation Libraries', 'CAD'],
+        githubLink: 'https://github.com/team/fitness-app',
+        designLink: 'https://figma.com/design/fitness-app',
+        taskBoardLink: 'https://trello.com/b/fitness',
+        teamMembers: [
+            { name: 'Shreya Sujal Vora', role: 'Project Manager', contact: 'shreya.sm.vora@berkeley.edu' },
+            { name: 'Sarah Zhang', role: 'Project Manager', contact: 'sarahzh@berkeley.edu' },
+            { name: 'Bo Wang', role: 'Android Developer', contact: 'bo.wang@berkeley.edu' },
+            { name: 'Stephen Park', role: 'Product Designer', contact: 's.park0@berkeley.edu' },
+            { name: 'Joey Kamei', role: 'Product Designer', contact: 'joelkamei@berkeley.edu' },
+            { name: 'Aryan Das', role: 'Product Designer', contact: 'aryandas@berkeley.edu' },
+            { name: 'Jamie Jang', role: 'Product Designer', contact: '02jamiejang@berkeley.edu' },
+        ],
+        roadmap: [
+            'August 2025: Project Kickoff',
+            'September 2025: Requirements Gathering',
+            'October 2025: Design Phase',
+            'November 2025: Development Phase'
+        ],
+        status: 'Completed'
+    },
+    {
         id: '4',
-        name: 'Internal HR Portal',
-        description: 'Comprehensive HR management system for employee onboarding, leave management, and performance reviews.',
-        techStack: ['Vue.js', 'Django', 'PostgreSQL', 'Docker'],
+        name: 'San Jose Museum of Art',
+        description: 'Data and machine learning analysis of visitor data, exhibition trends, and other relevant information to help SJMA enhance visitor engagement and understand their audience.',
+        techStack: ['Python', 'SQL', 'Pandas', 'PyTorch'],
         githubLink: 'https://github.com/team/hr-portal',
         designLink: 'https://figma.com/design/hr-portal',
         taskBoardLink: 'https://notion.so/hr-portal',
         teamMembers: [
-            { name: 'Rachel Green', role: 'Tech Lead', contact: 'rachel.g@company.com' },
-            { name: 'Tom Anderson', role: 'Backend Developer', contact: 'tom.a@company.com' },
+            { name: 'Sara Jangid', role: 'Project Manager', contact: 'sarajangid@berkeley.edu' },
+            { name: 'Krithika Singh', role: 'Data Analyst', contact: 'krithikasingh@berkeley.edu' },
+            { name: 'Caden Lewis', role: 'Data Analyst', contact: 'cadenlewis@berkeley.edu' },
+            { name: 'Cameron Leung', role: 'Project Manager', contact: 'cameronleung@berkeley.edu' },
+            { name: 'David Tan', role: 'Software Developer', contact: 'david_tan@berkeley.edu' },
+            { name: 'Divij Muthu', role: 'ML Engineer', contact: 'divij_muthu@berkeley.edu' },
+            { name: 'Gurmeher Bhasin', role: 'Project Developer', contact: 'gurmeher@berkeley.edu' },
+            { name: 'Riya Sameer Khasnis', role: 'Client Coordinator', contact: 'riya_khasnis@berkeley.edu' },
         ],
         roadmap: [
-            'Employee Portal - Live',
-            'Manager Dashboard - Live',
-            'Analytics Module - In Development',
-            'Mobile Access - Planned'
+            'August 2025: Project Kickoff',
+            'September 2025: Requirements Gathering',
+            'October 2025: Design Phase',
+            'November 2025: Development Phase'
         ],
         status: 'In Progress'
     },
-    {
-        id: '5',
-        name: 'AI Chatbot Assistant',
-        description: 'Intelligent customer support chatbot with natural language processing and multi-language support.',
-        techStack: ['Python', 'FastAPI', 'OpenAI API', 'React', 'WebSocket'],
-        githubLink: 'https://github.com/team/ai-chatbot',
-        designLink: 'https://figma.com/design/chatbot',
-        taskBoardLink: 'https://jira.com/chatbot-project',
-        teamMembers: [
-            { name: 'Dr. Amy Liu', role: 'ML Engineer', contact: 'amy.liu@company.com' },
-            { name: 'Kevin Zhang', role: 'Backend Engineer', contact: 'kevin.z@company.com' },
-            { name: 'Olivia Brown', role: 'Frontend Developer', contact: 'olivia.b@company.com' },
-        ],
-        roadmap: [
-            'Research & Prototyping',
-            'Model Training',
-            'Integration Testing',
-            'Pilot Launch'
-        ],
-        status: 'Planning'
-    },
-    {
-        id: '6',
-        name: 'Documentation Hub',
-        description: 'Centralized documentation platform with search, versioning, and collaborative editing features.',
-        techStack: ['Docusaurus', 'Markdown', 'Algolia', 'GitHub Pages'],
-        githubLink: 'https://github.com/team/docs-hub',
-        designLink: 'https://figma.com/design/docs',
-        taskBoardLink: 'https://trello.com/b/docs-hub',
-        teamMembers: [
-            { name: 'Marcus Lee', role: 'Technical Writer', contact: 'marcus.l@company.com' },
-            { name: 'Isabella Cruz', role: 'Developer Advocate', contact: 'isabella.c@company.com' },
-        ],
-        roadmap: [
-            'Content Migration - Completed',
-            'Search Optimization - Completed',
-            'API Docs Integration - Current',
-            'Video Tutorials - Next'
-        ],
-        status: 'Completed'
-    }
+   
 ];
 
 // State
